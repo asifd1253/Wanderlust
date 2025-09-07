@@ -40,16 +40,16 @@
           </button>
         </form>
       </div>
-
       <!-- Right-side user authentication links -->
       <div class="navbar-nav ms-auto">
-        <% if(!currUser) { %>
+        <% if (currUser) { %>
+        <!-- Shown when user IS logged in -->
+        <a class="nav-link" href="/logout"><b>Logout</b></a>
+        <a class="nav-link disabled"><b><%= currUser.username %></b></a>
+        <% } else { %>
         <!-- Shown when user is NOT logged in -->
         <a class="nav-link active" href="/signup"><b>Sign up</b></a>
         <a class="nav-link" href="/login"><b>Login</b></a>
-        <% } %> <% if(currUser) { %>
-        <!-- Shown when user IS logged in -->
-        <a class="nav-link" href="/logout"><b>Logout</b></a>
         <% } %>
       </div>
     </div>
