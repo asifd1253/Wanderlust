@@ -9,7 +9,7 @@ const mapToken = process.env.MAP_TOKEN;
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.MONGO_URL;
 async function main() {
   await mongoose.connect(MONGO_URL);
 }
@@ -46,7 +46,7 @@ const initDB = async () => {
 
     const listing = new Listings({
       ...obj,
-      owner: "68b29c42a361adcd3650d6ae", // add owner
+      owner: "68bd370b1a3b92d29369537c", // add owner
       geometry: geoData.body.features[0].geometry, // add geometry
     });
 
