@@ -1,0 +1,81 @@
+<!-- Filter Bar Section: Icons and Labels -->
+<div id="filters">
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-fire"></i></div>
+    <p>Trending</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-mountain"></i></div>
+    <p>Mountain</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-water"></i></div>
+    <p>Beach</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-tree"></i></div>
+    <p>Nature</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-city"></i></div>
+    <p>City</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-snowflake"></i></div>
+    <p>Snow</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-campground"></i></div>
+    <p>Camping</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-house"></i></div>
+    <p>Cabins</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-igloo"></i></div>
+    <p>Unique Stays</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-umbrella-beach"></i></div>
+    <p>Tropical</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-fan"></i></div>
+    <p>Desert</p>
+  </div>
+  <div class="filter">
+    <div><i id="filter-icons" class="fa-solid fa-building"></i></div>
+    <p>Apartments</p>
+  </div>
+
+  <!-- Tax Toggle Switch Section -->
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckDefault"
+      />
+      <label class="form-check-label" for="flexSwitchCheckDefault"
+        >Display taxes</label
+      >
+    </div>
+  </div>
+</div>
+
+<!-- Tax Toggle Script: Show/Hide Tax Info -->
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for (info of taxInfo) {
+      if (taxSwitch.checked) {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>

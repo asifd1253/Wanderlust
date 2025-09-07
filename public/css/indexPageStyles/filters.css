@@ -1,0 +1,29 @@
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter {
+  margin-top: 1rem;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.filter:hover {
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.9rem;
+}
+
+.tax-toggle {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 3rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes to rightmost side in flex container */
+}
