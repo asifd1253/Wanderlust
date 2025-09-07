@@ -33,7 +33,7 @@ module.exports.login = async (req, res) => {
   return res.redirect(redirectUrl);
 };
 
-module.exports.logout = (req, res) => {
+module.exports.logout = (req, res, next) => {
   req.logout((err) => {
     if (err) {
       return next(err);

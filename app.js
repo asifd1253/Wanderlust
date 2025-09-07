@@ -98,12 +98,20 @@ app.all(/.*/, (req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
 });
 
+// app.use((err, req, res, next) => {
+//   let { statusCode = 500, message = "Default Error Hanling" } = err;
+//   res.status(statusCode).render("error.ejs", { message });
+//   // res.status(statusCode).send(message);
+// });
+
 app.use((err, req, res, next) => {
-  let { statusCode = 500, message = "Default Error Hanling" } = err;
+  if (res.headersSent) {
+    return next(err); // delegate to Express default handler
+  }
+  let { statusCode = 500, message = "Default Error Handling" } = err;
   res.status(statusCode).render("error.ejs", { message });
-  // res.status(statusCode).send(message);
 });
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("server is listening to 3001");
 });

@@ -66,7 +66,6 @@ module.exports.updateListing = async (req, res) => {
     let url = req.file.path;
     let filename = req.file.filename;
     editedListing.image = { url, filename };
-    await editedListing.save();
   }
 
   // If location was changed, fetch new geo coordinates
@@ -79,9 +78,8 @@ module.exports.updateListing = async (req, res) => {
       .send();
 
     editedListing.geometry = geoData.body.features[0].geometry;
-    await editedListing.save();
   }
-
+  await editedListing.save();
   req.flash("success", "listing Updated successfully.");
   // res.redirect("/listings");
   res.redirect(`/listings/${id}`);
