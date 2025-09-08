@@ -1,94 +1,33 @@
-/* card.css - complements show.css. Keep both in public/css/ */
-
-/* reset some bootstrap card defaults if needed */
 .listing-card {
-  margin-bottom: 1.6rem;
-  border: none;
+  border: none !important;
+  margin-bottom: 2rem;
 }
-
-/* rounded image and consistent object-fit */
 .card-img-top {
-  border-radius: 0;
+  border-radius: 1rem !important;
   width: 100% !important;
-  display: block;
+  object-fit: cover !important;
 }
-
-/* remove default card-body padding if you want more compact layout */
 .card-body {
-  padding: 1rem !important;
+  padding: 0 !important;
 }
-
-/* small utilities */
+.card-text p {
+  font-weight: 400;
+}
 .listing-link {
   text-decoration: none;
-  color: inherit;
+}
+/* Card Effect */
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
 }
 
-/* subtle overlay effect for hoverable images (kept mild) */
-.card-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  transition: background-color 220ms ease;
-}
-.card-media:hover::after {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.06) 100%
-  );
-}
-
-/* starability result placeholder styling (so ratings look reasonable) */
-.starability-result {
-  display: inline-block;
-  height: 18px;
-  line-height: 18px;
-  margin-bottom: 0.6rem;
-}
-.starability-result::before {
-  content: "★";
-  color: #f59e0b;
-  opacity: 0.95;
-  margin-right: 0.2rem;
-}
-
-/* small text and meta */
-.meta {
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-/* contact / tax info hidden by default but present */
+/* tax info */
 .tax-info {
   display: none;
   font-size: 0.8rem;
   color: gray;
-}
-
-/* form controls (consistent spacing) */
-textarea.form-control {
-  resize: vertical;
-  min-height: 80px;
-}
-
-/* make delete buttons subtle */
-button.btn-outline-dark {
-  border-width: 1px;
-}
-
-/* small accessibility focus states */
-button:focus,
-a:focus {
-  outline: 3px solid rgba(13, 110, 253, 0.12);
-  outline-offset: 2px;
-}
-
-/* small screens: stack action buttons */
-@media (max-width: 575.98px) {
-  .action-group {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
 }
